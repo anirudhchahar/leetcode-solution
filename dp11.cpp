@@ -1,4 +1,5 @@
 #include<bitset>/stdc++.h>
+#include <iostream>
 using namespace std;
 int maxnoofways(int coins[], int n, int sum){
     int dp[n+1][sum +1];
