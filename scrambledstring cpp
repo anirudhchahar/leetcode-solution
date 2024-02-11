@@ -1,0 +1,41 @@
+#include <bitset>/stdc++.h>
+#include <iostream>
+using namespace std;
+bool Solve(string a, string b){
+    if(a.compare(b) == 0){
+        return true;
+    }
+    if(a.length() <= 1){
+        return false;
+    }
+    int n = a.length();
+    bool flag = false;
+    for(int i=1; i<n; i++){
+        if ((Solve(X.substr(0, i), Y.substr(n - i, i)) && Solve(X.substr(i), Y.substr(0, n - i))) ||
+		        (Solve(X.substr(0, i), Y.substr(0, i)) && Solve(X.substr(i), Y.substr(i)))) {
+			flag = true;
+			break;
+        }    
+    }
+
+    return flag;
+
+
+}
+int main(){
+    string a,b;
+    cin>>a>>b;
+
+    if(a.length() != b.length())return false;
+    else {
+        if(Solve(a, b)){
+            cout<<"yes";
+        }
+        else{
+            cout<<"no";
+        }
+    }
+
+    return 0;
+
+}
